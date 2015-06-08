@@ -1,0 +1,5 @@
+{ "url": "ws://wsmqtt.example.com:8888/mqtt",
+  "port": 8888,
+  "subscribetopic": "topicPrefix/#", 
+  "topic": "topicPrefix/ConnectiontestFromElectron"
+}
