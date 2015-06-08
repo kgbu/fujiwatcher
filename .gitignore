@@ -29,4 +29,4 @@ Makefile*
 
 # application specific
 
-.auth.conf
+.auth.conf*

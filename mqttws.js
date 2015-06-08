@@ -1,7 +1,7 @@
 var fs = require('fs');
 var conf = JSON.parse(fs.readFileSync('./.auth.conf', 'utf8'));
 
-var ops = {};
+var ops = {username: conf.username, password: conf.password};
 var mows   = require('mows');
 var client = mows.createClient(conf.port,conf.url,ops);
 
