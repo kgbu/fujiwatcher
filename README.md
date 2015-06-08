@@ -9,5 +9,7 @@ To Start
 =====
 
 ```
+git clone https://github.com/kgbu/fujiwatcher.git
+cd fujiwatcher
 electron .
 ```
