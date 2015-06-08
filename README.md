@@ -5,7 +5,7 @@ MQTT gateway (Fuji in my case) watcher via Websocket
 
 Now I'm trying to figure out how to write Electron code.
 
-To Install 
+Start here
 =====
 
 ```
