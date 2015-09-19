@@ -1,4 +1,6 @@
 var fs = require('fs');
+var qrCode = require('qrcode-npm');
+
 var conf = JSON.parse(fs.readFileSync('./.auth.conf', 'utf8'));
 
 var ops = {username: conf.username, password: conf.password};
@@ -35,6 +37,19 @@ client.on('message', function (topic, message) {
     lasttext = currenttext;
     lasttime = Date.now();
   }
+
+  // make QRcode
+  var qr = qrCode.qrcode(4, 'M');
+  var qrstr = new String(message);
+  if (qrstr.length < 62) {
+  	qr.addData(qrstr);
+  } else {
+  	qr.addData("aaa");
+  }
+  qr.make();
   
-  document.getElementById('currentstate').innerHTML =curtime.toLocaleDateString("en-us", options) + "<br>" + lasttext;
+  itag = qr.createImgTag(4);
+  
+  document.getElementById('currentstate').innerHTML =curtime.toLocaleDateString("en-us", options) + "<br>" + lasttext + "<br>";
+  document.getElementById('currentimg').innerHTML = "<h2>QR code of last message </h2><p>Note: In case of less than 64bytes.<br>\n" + itag + "\n";
 });

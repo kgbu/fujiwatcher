@@ -30,3 +30,6 @@ Makefile*
 # application specific
 
 .auth.conf*
+
+# screen logs
+screenlog.*
